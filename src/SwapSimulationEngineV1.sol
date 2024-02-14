@@ -1,7 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
+import "openzeppelin-contracts/contracts/utils/math/SafeMath.sol";
+
 contract SimulatorV1 {
+    using SafeMath for uint256;
     // Polygon network addresses
     address public UNISWAP_V2_FACTORY =
         0x5757371414417b8C6CAad45bAeF941aBc7d3Ab32;
@@ -36,7 +39,7 @@ contract SimulatorV1 {
 
             if (params.protocol == 0) {
                 amountOut = simulateUniswapV2SwapIn(params);
-            } 
+            }
             if (params.protocol == 1) {
                 amountOut = simulateUniswapV3SwapIn(params);
             }
@@ -54,7 +57,9 @@ contract SimulatorV1 {
 
     function simulateUniswapV2SwapIn(
         SwapParams memory params
-    ) public returns (uint256 amountOut) {}
+    ) public returns (uint256 amountOut) {
+        
+    }
 
     function simulateUniswapV3SwapIn(
         SwapParams memory params
